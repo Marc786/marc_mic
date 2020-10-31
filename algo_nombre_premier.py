@@ -1,12 +1,8 @@
-#tester i nombres
-def prim(nb):
-    for x in range(2, nb-1): #tester si le nb est premeier
-        if nb % x == 0:
-            return print(f"Le nombre {nb} n'est pas premier.")
-    return print(f"Le nombre {nb} est premier.")
+import time
+
 
 def vprime(n):
-    for x in range(2, n-1): #tester si le nb est premeier
+    for x in range(2, n-1):
         if n % x == 0:
             return False
     return True
@@ -18,4 +14,8 @@ def liste_prime(z):
             liste.append(i)
     return print(liste)
 
-liste_prime(100000)
+r = 1000000
+debut = time.perf_counter()
+liste_prime(r)
+fin = time.perf_counter()
+print(f"La liste des nombres premiers parmis les {r} premiers nombres a été trouvé en {fin - debut} secondes.")
