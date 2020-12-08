@@ -38,86 +38,32 @@
 
 
 
-def pri():   
-    print(etat_partie()['murs'])
+# def pri():   
+#     print(etat_partie()['murs'])
+#     return 7
+# def etat_partie():
+#     dico = {
+#         'joueurs':['x', 'y'],
+#         'murs': 6
+#     }
+#     return dico
 
-def etat_partie():
-    dico = {
-        'joueurs':['x', 'y'],
-        'murs': 6
-    }
-    return dico
+# pri()
 
-pri()
+# murs = {
+#     'horizontaux': [],
+#     'verticaux': []
+# }
 
+# joueurs = [
+#     {'nom': 'joueurs1',  'murs': 6, 'pos':['x','y']},
+#     {'nom': 'joueurs2',  'murs': 6, 'pos':['x','y']}
+# ]
 
-        # def __str__(self):
-        # """Représentation en art ascii de l'état actuel de la partie.
+import random
 
-        # Cette représentation est la même que celle du projet précédent.
+for i in range(9):
+    print(random.randint(0,3))
 
-        # Returns:
-        #     str: La chaîne de caractères de la représentation.
-        # """
-        # etat_partie = self.état_partie()
-        # j1 = ''
-        # j2 = ''
-        # if len(etat_partie['joueurs'][0]['nom']) > len(etat_partie['joueurs'][1]['nom']):
-        #     diff = len(etat_partie['joueurs'][0]['nom']) - len(etat_partie['joueurs'][1]['nom'])
-        #     j2 = etat_partie['joueurs'][1]['nom'] + ', ' + (diff)*' '
-        #     j1 = etat_partie['joueurs'][0]['nom'] + ', '
-        # elif len(etat_partie['joueurs'][1]['nom']) > len(etat_partie['joueurs'][0]['nom']):
-        #     diff = len(etat_partie['joueurs'][1]['nom']) - len(etat_partie['joueurs'][0]['nom'])
-        #     j1 = etat_partie['joueurs'][0]['nom'] + ', ' + (diff)*' '
-        #     j2 = etat_partie['joueurs'][1]['nom'] + ', '
-        # else:
-        #     j1 = etat_partie['joueurs'][0]['nom'] + ', '
-        #     j2 = etat_partie['joueurs'][1]['nom'] + ', '
-        # legende = [
-        #     'Légende:',
-        #     '   1='+j1+'murs='+etat_partie['joueurs'][0]['murs']*'|',
-        #     '   2='+j2+'murs='+etat_partie['joueurs'][1]['murs']*'|'
-        # ]
-        
-        # damier = [
-        # ['--|'+35*'-'+'\n', '  | 1', '   2', '   3', '   4', '   5', '   6', '   7', '   8', '   9'],
-        # ['1 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['  |','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ','|'],
-        # ['2 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['  |','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ','|'],
-        # ['3 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['  |','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ','|'],
-        # ['4 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['  |','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ','|'],
-        # ['5 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['  |','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ','|'],
-        # ['6 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['  |','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ','|'],
-        # ['7 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['  |','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ','|'],
-        # ['8 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['  |','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ',' ','   ','|'],
-        # ['9 | ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.','   ','.',' |'],
-        # ['   '+35*'-']
-        # ]
-
-        # for i in range(len(etat_partie['murs']['horizontaux'])):
-        #     x = 2*(etat_partie['murs']['horizontaux'][i][0] - 1)
-        #     y = 2*(etat_partie['murs']['horizontaux'][i][1] - 1)
-        #     damier[y][x+1] = '---'
-        #     damier[y][x+2] = '-'
-        #     damier[y][x+3] = '---'
-        # for i in range(len(etat_partie['murs']['verticaux'])):
-        #     x = 2*(etat_partie['murs']['verticaux'][i][0] - 1)
-        #     y = 2*(etat_partie['murs']['verticaux'][i][1] - 1)
-        #     damier[y+1][x] = ' | '
-        #     damier[y+2][x] = '|'
-        #     damier[y+3][x] = ' | '
-        # for i in range(2):
-        #     x = 2*etat_partie['joueurs'][i]['pos'][0] - 1
-        #     y = 2*etat_partie['joueurs'][i]['pos'][1] - 1
-        #     damier[y][x] = str(i+1)
-        # for line in range(3):
-        #     print(*legende[line], sep='')
-        # for line in reversed(range(19)):
-        #     print(*damier[line], sep='')
+liste = [1,2]
+print(len(liste))
