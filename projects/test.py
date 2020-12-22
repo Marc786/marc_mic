@@ -60,10 +60,38 @@
 #     {'nom': 'joueurs2',  'murs': 6, 'pos':['x','y']}
 # ]
 
-import random
+# import random
 
-for i in range(9):
-    print(random.randint(0,3))
+# for i in range(9):
+#     print(random.randint(0,3))
 
-liste = [1,2]
-print(len(liste))
+# liste = [1,2]
+# print(len(liste))
+# liste = []
+# for i in range(9):
+#     liste.append(i)
+# print(liste)
+
+# def func1(n, y, z):
+#     return (100+n, 200+y, 300+z)
+
+# x = func1(5, 6, 7)
+# print(x)
+n = 100
+liste = []
+liste1= []
+liste2 = []
+liste3 = []
+for i in range(1, n+1):
+    if i%2==0:
+        liste.append(i)
+    elif i%2 == 1:
+        liste1.append(i)
+    if i%4==0:
+        liste2.append(i)
+    elif i%4==1 or i%4==2 or i%4==3:
+        liste3.append(i)
+print(liste)
+print(liste1)
+print(liste2)
+print(liste3)
