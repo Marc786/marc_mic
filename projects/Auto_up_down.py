@@ -35,18 +35,34 @@ def guess_auto_random():
     print(f'Le bot a trouve en {coups} coups.')
 
 def guess_auto_algo():
-    tranche = int(input("Sur quel tranche de nombre voulez vous jouer (nombre positif) ?"))
-    if tranche < 0:
-        raise ValueError("La tranche doit etre superieur a 0")
-    nombre = int(input("Quel est le nombre que le bot doit trouver ?"))
-    if nombre > tranche:
-        raise ValueError("Le nombre doit etre plus petit ou egal a la tranche")
+    error = True
+    tranche = 0
+    nombre = 0
+    while error:
+        try:
+            tranche = int(input("Sur quel tranche de nombre voulez vous jouer (nombre positif) ?"))
+            if tranche < 0:
+                raise ValueError("La tranche doit etre superieur a 0, reessayez")
+            error = False
+        except ValueError as identifier:
+            print(identifier)
+            error = True
+    error = True
+    while error:
+        try:
+            nombre = int(input("Quel est le nombre que le bot doit trouver ?"))
+            if nombre > tranche:
+                raise ValueError("Le nombre doit etre plus petit ou egal a la tranche, reessayez")
+            error = False
+        except ValueError as identifier:
+            print(identifier)
+            error = True
     check = True
     coups = 0
     low_guess = 0
     high_guess = tranche
-    guess = random.randint(0, tranche)
-    #guess = tranche/2
+    #guess = random.randint(0, tranche)
+    guess = tranche/2
     while check:
         coups += 1
         if guess == nombre:
@@ -60,3 +76,5 @@ def guess_auto_algo():
             guess = guess + (high_guess-guess)//2
             print(guess)
     print(f'Le bot a trouve en {coups} coups.')
+
+guess_auto_algo()
