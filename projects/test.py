@@ -60,10 +60,15 @@
 #     {'nom': 'joueurs2',  'murs': 6, 'pos':['x','y']}
 # ]
 
-import random
+# import random
 
-for i in range(9):
-    print(random.randint(0,3))
+# for i in range(9):
+#     print(random.randint(0,3))
 
 liste = [1,2]
-print(len(liste))
+liste[0]=5
+liste.append(3)
+print(liste)
+# print(len(liste))
+# for i in liste:
+#     print(i)
