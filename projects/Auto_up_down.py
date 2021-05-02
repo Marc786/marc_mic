@@ -93,6 +93,7 @@ def guess_auto_algo():
     high_guess = tranche
     #guess = random.randint(0, tranche)
     guess = tranche/2
+    print(guess)
     while check:
         coups += 1
         if guess == nombre:

@@ -12,7 +12,7 @@ def liste_prime(z):
     for i in range(2, z):
         if vprime(i):
             liste.append(i)
-    return print(liste)
+    return liste
     
 def liste2(z):
     liste = []
@@ -26,14 +26,15 @@ def liste2(z):
             liste.append(i)
     return liste
 
-r = 100
-# prime = ''
-# liste = liste2(r)
-# for i in liste:
-#     prime += (str(i) + ' ')
-# debut = time.perf_counter()
-# liste_prime(r)
+r = input("Sur combien de chiffres voulez vous trouver les nombres premiers ?")
+r = int(r)
+prime = ''
+liste = liste2(r)
+for i in liste:
+    prime += (str(i) + ' ')
+debut = time.perf_counter()
+liste_prime(r)
 # liste2(r)
-# fin = time.perf_counter()
-# print(f"La liste des nombres premiers parmis les {r} premiers nombres a été trouvé en {fin - debut} secondes.")
-# print(f"les nombres premiers de 0 a {r} sont : {prime}")
+fin = time.perf_counter()
+print(f"les nombres premiers de 0 a {r} sont : {prime}")
+print(f"La liste des nombres premiers parmis les {r} premiers nombres a été trouvé en {fin - debut} secondes.")
